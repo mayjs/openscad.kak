@@ -2,10 +2,11 @@
 
 **openscad.kak** is a plugin for the [Kakoune](https://github.com/mawww/kakoune) editor.
 It provides syntax highlighting for OpenSCAD files.
+
 The syntax highlighting was quickly thrown together using snippets from the existing
 highlighters shipped with kakoune.
 There probably will be some stuff that does not work correctly right now, if you find
-anything please create and issue and/or a pull request.
+anything please create an issue and/or a pull request.
 
 ## Installation
 ### With [plug.kak](https://github.com/andreyorst/plug.kak) (recommended)
