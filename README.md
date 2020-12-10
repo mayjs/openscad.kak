@@ -16,6 +16,17 @@ plug "mayjs/openscad.kak"
 ```
 Restart Kakoune, and execute `:plug-install`.
 
+### With NixOS
+
+Add the following to your config:
+```nix
+environment.systemPackages = [
+  (kakoune.override {
+    plugins = with kakounePlugins; [ openscad-kak ];
+  });
+];
+```
+
 ### Without plugin manager
 
 Clone this repo somewhere
