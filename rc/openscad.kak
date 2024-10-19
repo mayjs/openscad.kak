@@ -30,9 +30,10 @@ provide-module openscad %§
 
 add-highlighter shared/openscad regions
 add-highlighter shared/openscad/code default-region group
-add-highlighter shared/openscad/double_string region '"'   (?<!\\)(\\\\)*"  fill string
-add-highlighter shared/openscad/single_string region "'"   (?<!\\)(\\\\)*'  fill string
-add-highlighter shared/openscad/comment       region '//'   '$'              fill comment
+add-highlighter shared/openscad/double_string region '"' (?<!\\)(\\\\)*" fill string
+add-highlighter shared/openscad/single_string region "'" (?<!\\)(\\\\)*' fill string
+add-highlighter shared/openscad/comment region '//' '$' fill comment
+add-highlighter shared/openscad/block_comment region '/\*' '\*/' fill comment
 
 # Integer formats
 add-highlighter shared/openscad/code/ regex '(?i)\b0b[01]+l?\b' 0:value
@@ -50,7 +51,7 @@ evaluate-commands %sh{
     echo echo -debug $values
     meta="include use"
 
-    keywords="module function for each"
+    keywords="module function for each intersection_for if else let"
 
     # Taken from the OpenSCAD cheat sheet
     modules="circle square polygon text import projection
@@ -58,7 +59,7 @@ evaluate-commands %sh{
                 translate rotate scale resize mirror multmatrix color offset hull minkowski
                 union difference intersection"
     functions="concat lookup str chr ord search version version_num parent_module
-                abs sign sin cos tan acos asin atan atan2 floor round ceil ln len let log
+                abs sign sin cos tan acos asin atan atan2 floor round ceil ln len log
                 pow sqrt exp rands min max norm cross
                 is_undef is_bool is_num is_string is_list
                 echo render children assert"
