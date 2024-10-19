@@ -51,7 +51,7 @@ evaluate-commands %sh{
     echo echo -debug $values
     meta="include use"
 
-    keywords="module function for each"
+    keywords="module function for each intersection_for if let"
 
     # Taken from the OpenSCAD cheat sheet
     modules="circle square polygon text import projection
